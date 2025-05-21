@@ -63,20 +63,16 @@ This setup includes several high-quality color schemes that you can switch betwe
 :Kanagawa
 :Sonokai
 :Dracula
-```
-```vim
 :Catppuccin 
+
 " Available flavors for catppuccin:
 :colorscheme catppuccin-latte     " Light theme
 :colorscheme catppuccin-frappe    " Medium-dark theme
 :colorscheme catppuccin-macchiato " Darker theme
 :colorscheme catppuccin-mocha     " Darkest theme (default)
-```
-```vim
+
 ```
 
-```vim
-```
 For a complete list of available themes and their configurations, check the `lua/plugins/colorscheme.lua` file.
 
 ## Troubleshooting
