@@ -59,14 +59,11 @@ This setup includes several high-quality color schemes that you can switch betwe
 ### Tokyo Night Theme
 ```vim
 :TokyoNight            " Modern dark theme inspired by Tokyo at night
-:TokyoNightStorm       " Darker variant
-:TokyoNightDay         " Light variant
-:TokyoNightMoon       " Dark variant with more muted colors
 ```
 
 ### Catppuccin Theme
 ```vim
-:Catppuccin           " Switch to default Catppuccin (mocha)
+:Catppuccin           " Switch to default Catppuccin (macchiato)
 
 " Available flavors:
 :colorscheme catppuccin-latte     " Light theme
@@ -77,15 +74,12 @@ This setup includes several high-quality color schemes that you can switch betwe
 
 ### OneDark Theme
 ```vim
-:colorscheme onedark            " Classic OneDark theme
-:colorscheme onedark_vivid      " More vibrant variant
-:colorscheme onedark_dark      " Darker variant
+:OneDark           " Switch to default OneDark
 ```
 
 ### VSCode Theme
 ```vim
-:colorscheme vscode          " Default VSCode dark theme
-:colorscheme vscode_light   " Light variant
+:VSCode          " Switch to default VSCode dark theme
 ```
 
 For a complete list of available themes and their configurations, check the `lua/plugins/colorscheme.lua` file.
