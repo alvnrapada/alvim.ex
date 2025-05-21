@@ -168,9 +168,13 @@ return {
     cmd = { "ConformInfo" },
     keys = {
       {
-        "<leader>f",
+        "<leader>cf",
         function()
-          require("conform").format({ async = true, lsp_fallback = false })
+          require("conform").format({ 
+            async = true, 
+            lsp_fallback = false,
+            timeout_ms = 3000
+          })
         end,
         mode = "",
         desc = "Format buffer",
