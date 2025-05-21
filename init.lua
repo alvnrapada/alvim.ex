@@ -23,12 +23,6 @@ require("lazy").setup({
   
   -- FZF setup
   {
-    'junegunn/fzf',
-    build = function()
-      vim.fn['fzf#install']()
-    end
-  },
-  {
     'junegunn/fzf.vim',
     dependencies = { 'junegunn/fzf' },
     config = function()
