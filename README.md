@@ -56,32 +56,28 @@ vi     # Aliased to nvim
 
 This setup includes several high-quality color schemes that you can switch between:
 
-### Tokyo Night Theme
 ```vim
-:TokyoNight            " Modern dark theme inspired by Tokyo at night
+:VSCode (Default)
+:TokyoNight
+:OneDark
+:Kanagawa
+:Sonokai
+:Dracula
 ```
-
-### Catppuccin Theme
 ```vim
-:Catppuccin           " Switch to default Catppuccin (macchiato)
+:Catppuccin 
 
-" Available flavors:
+" Available flavors for catppuccin:
 :colorscheme catppuccin-latte     " Light theme
 :colorscheme catppuccin-frappe    " Medium-dark theme
 :colorscheme catppuccin-macchiato " Darker theme
 :colorscheme catppuccin-mocha     " Darkest theme (default)
 ```
 
-### OneDark Theme
 ```vim
-:OneDark           " Switch to default OneDark
 ```
-
-### VSCode Theme
 ```vim
-:VSCode          " Switch to default VSCode dark theme
 ```
-
 For a complete list of available themes and their configurations, check the `lua/plugins/colorscheme.lua` file.
 
 ## Troubleshooting
