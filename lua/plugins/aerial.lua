@@ -111,7 +111,7 @@ return {
     })
     
     -- Key mappings for aerial
-    vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>', { desc = 'Toggle Aerial (Code Outline)' })
+    vim.keymap.set('n', '<leader>a', '<cmd>AerialOpen<CR>', { desc = 'Toggle Aerial (Code Outline)' })
     vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', { desc = 'Jump to previous symbol' })
     vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', { desc = 'Jump to next symbol' })
     vim.keymap.set('n', '[[', '<cmd>AerialPrevUp<CR>', { desc = 'Jump to previous parent symbol' })
