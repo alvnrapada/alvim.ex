@@ -1,6 +1,6 @@
-# Neovim Configuration
+# My Neovim Setup for Elixir Development
 
-A modern Neovim setup optimized for Elixir, Phoenix, and web development.
+This is my latest Neovim setup for Elixir Development.
 
 ## Prerequisites
 
