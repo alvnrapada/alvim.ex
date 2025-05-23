@@ -2,6 +2,9 @@
 
 This is my latest Neovim setup for Elixir Development.
 
+![Frame 5](https://github.com/user-attachments/assets/69a4a4cf-3bae-4824-b236-f6f30b6551a7)
+
+
 ## Prerequisites
 
 Ensure you have the following installed on your Mac:
