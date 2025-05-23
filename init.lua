@@ -170,7 +170,9 @@ vim.keymap.set('n', '<leader>ta', '<cmd>TestSuite<CR>')
 
 -- Vim-test settings
 vim.g['test#preserve_screen'] = 0
-vim.g['test#transformation'] = 'elixir_umbrella'
+vim.g['test#strategy'] = 'neovim'
+vim.g['test#neovim#term_position'] = 'tabnew'
+vim.g['test#elixir#exunit#options'] = '--trace'
 
 -- Autocommands
 vim.api.nvim_create_autocmd("BufWritePre", {
