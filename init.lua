@@ -43,7 +43,6 @@ require("lazy").setup({
   "tpope/vim-scriptease",
   "tpope/vim-fugitive",
   "tpope/vim-commentary",
-  "tpope/vim-markdown",
   "vim-scripts/closetag.vim",
   "vim-airline/vim-airline",
   "Yggdroot/indentLine",
@@ -56,8 +55,6 @@ require("lazy").setup({
   "isRuslan/vim-es6",
   "cakebaker/scss-syntax.vim",
   "pangloss/vim-javascript",
-  "Shougo/deoplete.nvim",
-  "sheerun/vim-polyglot",
   "mattn/emmet-vim",
   "dense-analysis/ale",
   -- Themes
