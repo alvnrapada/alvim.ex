@@ -26,10 +26,20 @@ brew install neovim
 brew install fzf
 ```
 
-4. Clone this repository:
+4. Make a backup of your current Neovim files:
+```bash
+mv ~/.config/nvim ~/.config/nvim.bak
+```
+
+5. Clone this repository:
 ```bash
 mkdir -p ~/.config
 git clone git@gitlab.com:alvnrapada/neovim-setup.git ~/.config/nvim
+```
+
+6. Remove the .git folder (so you can add it to your own repo later):
+```bash
+rm -rf ~/.config/nvim/.git
 ```
 
 The configuration will automatically install all plugins on first launch.
@@ -86,14 +96,6 @@ rm -rf ~/.local/share/nvim/lazy/*
 
 2. Restart Neovim and let it reinstall plugins automatically
 
-### Theme Issues
-If colors aren't displaying correctly:
-1. Ensure your terminal supports true color
-2. Add to your shell config (~/.zshrc or ~/.bashrc):
-```bash
-export TERM=xterm-256color
-```
-
 ## Key Mappings
 
 Leader key is set to `<space>`. Common mappings include:
@@ -112,5 +114,12 @@ Leader key is set to `<space>`. Common mappings include:
 ### Git Commands
 - `<space>gs` - Git status
 - `<space>gd` - Git diff view
+
+### Test Commands (vim-test)
+- `<space>tn` - Run the test nearest to the cursor
+- `<space>tl` - Run the last test
+- `<space>tg` - Visit the test file
+- `<space>tt` - Run the current test file
+- `<space>ta` - Run all tests in the suite
 
 For a complete list of mappings, check the `init.lua` file.
