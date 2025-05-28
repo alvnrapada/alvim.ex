@@ -118,6 +118,9 @@ Leader key is set to `<space>`. Common mappings include:
 - `<space>gs` - Git status
 - `<space>gd` - Git diff view
 
+### Elixir Development
+- `<space>mx` - Show module callers (mix xref callers) for current module
+
 ### Test Commands (vim-test)
 - `<space>tn` - Run the test nearest to the cursor
 - `<space>tl` - Run the last test

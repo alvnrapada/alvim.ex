@@ -134,6 +134,28 @@ vim.keymap.set('n', '<leader>tp', '<cmd>split | terminal mix phx.server<CR>')
 vim.keymap.set('n', '<leader>tg', '<cmd>split | terminal mix deps.get<CR>')
 vim.keymap.set('n', '<leader>tm', '<cmd>split | terminal mix ecto.migrate<CR>')
 
+-- Add mix xref callers mapping
+vim.keymap.set('n', '<leader>mx', function()
+  -- Get all lines from current buffer
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  local module_name = ""
+  
+  -- Find the defmodule line and extract module name
+  for _, line in ipairs(lines) do
+    local match = line:match("^%s*defmodule%s+([%w%.]+)%s+do%s*$")
+    if match then
+      module_name = match
+      break
+    end
+  end
+  
+  vim.ui.input({ prompt = 'Module name: ', default = module_name }, function(input_module)
+    if input_module then
+      vim.cmd('botright vsplit | terminal mix xref callers ' .. input_module)
+    end
+  end)
+end)
+
 -- Tab navigation
 vim.keymap.set('n', '<leader>gn', '<cmd>tabnext<CR>')
 vim.keymap.set('n', '<leader>gp', '<cmd>tabprevious<CR>')
