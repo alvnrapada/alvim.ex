@@ -1,6 +1,6 @@
 # Getting Started with Elixir Development on macOS
 
-This guide will walk you through setting up a complete Elixir development environment on your Mac. We'll cover installing all necessary tools and dependencies to get you started with Elixir development.
+This guide will walk you through setting up a complete Elixir development environment on your Mac.
 
 ## Prerequisites
 
@@ -41,12 +41,11 @@ source ~/.zshrc
 
 ## Step 3: Install Erlang Dependencies
 
-Before installing Erlang, we need some dependencies:
+The essential dependency for Erlang:
 
 ```bash
-brew install wxwidgets
+# Required for Erlang's crypto and SSL functionality
 brew install openssl@1.1
-brew install libxslt fop
 ```
 
 ## Step 4: Install Erlang
@@ -119,9 +118,6 @@ asdf global nodejs latest
 Install some additional development tools:
 
 ```bash
-# Install inotify-tools for file system monitoring
-brew install inotify-tools
-
 # Install git if not already installed
 brew install git
 ```
@@ -186,5 +182,3 @@ Visit [`localhost:4000`](http://localhost:4000) in your browser to see your Phoe
    - Check if PostgreSQL is running
    - Ensure all dependencies are installed: `mix deps.get`
    - Make sure database is created: `mix ecto.create`
-
-For more help, visit the [Elixir Forum](https://elixirforum.com/) or join the [Elixir Discord](https://discord.gg/elixir). 
