@@ -7,7 +7,9 @@ This is my latest Neovim setup for Elixir Development.
 
 ## Prerequisites
 
-Ensure you have the following installed on your Mac:
+Before setting up Neovim, please ensure you have:
+
+- [Getting Started with Elixir Development](./GETTING_STARTED_WITH_ELIXIR.md) - Complete this guide first to set up your Elixir development environment
 - XCode
 - [HomeBrew](https://brew.sh)
 - Git
