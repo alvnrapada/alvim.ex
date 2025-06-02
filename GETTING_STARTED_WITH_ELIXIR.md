@@ -39,6 +39,55 @@ echo '. "$(brew --prefix asdf)/libexec/asdf.sh"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
+Add these helpful aliases to your `.zshrc`:
+
+1. Open `.zshrc` in vim:
+```bash
+vim ~/.zshrc
+```
+
+2. Add these aliases to the file:
+```bash
+# Neovim aliases
+alias vim=nvim
+alias vi=nvim
+alias nv=nvim
+
+# Git aliases
+alias gs="git status --short"
+alias go="git checkout "
+alias ga="git add "
+alias gp="git push -u origin "
+alias gl="git pull origin "
+alias gc="git commit "
+alias gh="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gf="git fetch"
+alias glu="git pull upstream"
+alias gm="git merge "
+alias gb="git checkout -"
+alias gst="git stash"
+alias gstp="git stash pop"
+alias gstm="git stash push -m"
+alias gd="git diff "
+alias gr="git rebase "
+
+# Mix and Phoenix aliases
+alias ms="iex -S mix phx.server"
+alias mps="mix phx.server"
+alias mem="mix ecto.migrate"
+alias megm="mix ecto.gen.migration"
+alias mrr="mix ecto.reset && mix ecto.realistic"
+alias mrd="mix ecto.reset && mix ecto.demo"
+alias md="mix deps.get"
+```
+
+3. Save and quit vim (press `ESC`, then type `:wq` and hit `Enter`)
+
+4. Reload your shell configuration:
+```bash
+source ~/.zshrc
+```
+
 ## Step 3: Install Erlang Dependencies
 
 The essential dependency for Erlang:
