@@ -76,8 +76,6 @@ alias ms="iex -S mix phx.server"
 alias mps="mix phx.server"
 alias mem="mix ecto.migrate"
 alias megm="mix ecto.gen.migration"
-alias mrr="mix ecto.reset && mix ecto.realistic"
-alias mrd="mix ecto.reset && mix ecto.demo"
 alias md="mix deps.get"
 ```
 
