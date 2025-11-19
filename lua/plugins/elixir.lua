@@ -186,11 +186,22 @@ return {
         heex = { "mix" },
         eelixir = { "mix" },
         surface = { "mix" }, -- For Surface templates if you use them
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
+        vue = { "prettier" },
+        json = { "prettier" },
+        css = { "prettier" },
+        scss = { "prettier" },
+        markdown = { "prettier" },
       },
       format_on_save = {
         timeout_ms = 3000, -- Increased timeout for larger files
         lsp_fallback = false,
       },
+      -- Enable format on save for all configured filetypes
+      format_after_save = false, -- Format before save (BufWritePre)
       formatters = {
         mix = {
           command = "mix",
@@ -209,6 +220,35 @@ return {
             end
             
             -- Fallback to current working directory
+            return vim.fn.getcwd()
+          end,
+        },
+        prettier = {
+          command = "npx",
+          args = { "--yes", "prettier", "--stdin-filepath", "$FILENAME" },
+          stdin = true,
+          cwd = function(ctx)
+            -- For sphinx project, look for src directory or package.json
+            local current_file = ctx.filename
+            local current_dir = vim.fn.fnamemodify(current_file, ':h')
+            
+            -- Check if we're in the sphinx project
+            local sphinx_src = vim.fn.finddir('src', current_dir .. ';')
+            if sphinx_src ~= '' then
+              -- Find package.json in src directory
+              local package_json = vim.fn.findfile('package.json', sphinx_src .. ';')
+              if package_json ~= '' then
+                return vim.fn.fnamemodify(package_json, ':h')
+              end
+            end
+            
+            -- Fallback: look for package.json in current or parent directories
+            local package_json = vim.fn.findfile('package.json', current_dir .. ';')
+            if package_json ~= '' then
+              return vim.fn.fnamemodify(package_json, ':h')
+            end
+            
+            -- Final fallback to current working directory
             return vim.fn.getcwd()
           end,
         },
