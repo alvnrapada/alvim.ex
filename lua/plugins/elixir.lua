@@ -228,14 +228,29 @@ return {
           args = { "--yes", "prettier", "--stdin-filepath", "$FILENAME" },
           stdin = true,
           cwd = function(ctx)
-            -- For sphinx project, look for src directory or package.json
+            -- For sphinx project, look for src directory with .prettierrc
             local current_file = ctx.filename
             local current_dir = vim.fn.fnamemodify(current_file, ':h')
             
-            -- Check if we're in the sphinx project
+            -- First, try to find .prettierrc in src directory (sphinx project structure)
+            local prettierrc = vim.fn.findfile('.prettierrc', current_dir .. ';')
+            if prettierrc ~= '' then
+              local prettierrc_dir = vim.fn.fnamemodify(prettierrc, ':h')
+              -- Check if this is in the src directory
+              if vim.fn.findfile('package.json', prettierrc_dir .. ';') ~= '' then
+                return prettierrc_dir
+              end
+            end
+            
+            -- Check if we're in the sphinx project structure (look for src directory)
             local sphinx_src = vim.fn.finddir('src', current_dir .. ';')
             if sphinx_src ~= '' then
-              -- Find package.json in src directory
+              -- Find .prettierrc in src directory
+              local src_prettierrc = vim.fn.findfile('.prettierrc', sphinx_src .. ';')
+              if src_prettierrc ~= '' then
+                return vim.fn.fnamemodify(src_prettierrc, ':h')
+              end
+              -- Find package.json in src directory as fallback
               local package_json = vim.fn.findfile('package.json', sphinx_src .. ';')
               if package_json ~= '' then
                 return vim.fn.fnamemodify(package_json, ':h')
